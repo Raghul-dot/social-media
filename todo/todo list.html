@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todo list</title>
+    
+</head>
+<body>
+    <div class="main">
+        <h2>Todo List</h2>
+        <input type="text" id="text">
+        <button id="btn">ADD</button>
+        <div id="list">
+
+        </div>
+    </div>
+    <script>
+
+let input= document.getElementById("text");
+let btn =document.getElementById("btn");
+let output=document.getElementById("list");
+
+let ary = [];
+btn.addEventListener("click",()=>{
+    ary.push(input.value)
+    render(input.value)
+    input.value=''
+
+})
+function render(todo) {
+    let li = document.createElement('li') ;
+    li.innerText = todo;
+    output.appendChild(li);
+    li.style.textDecoration='pointer';
+
+    li.addEventListener("hover", ()=>{
+    li.style.textDecoration='underline'
+    })
+    li.addEventListener("click", ()=>{
+    li.style.textDecoration='line-through'
+    })
+    li.addEventListener("dblclick", ()=>{
+    list.removeChild(li);
+    remove(tode)
+})
+
+}
+function remove(ary){
+    let index = indexof(ary)
+    if(index>-1)
+    ary.splice(todo)
+
+}
+
+
+        // let input=document.getElementById("text");
+        // let button=document.getElementById("btn");
+        // let list=document.getElementById("list");
+
+        // let ary=[];
+        // button.addEventListener('click',()=>{
+        //     ary.push(input.value)
+        //     render(input.value)
+        //     input.value=''
+        // })
+        // function render(todo){
+        //     let para = document.createElement("p");
+        //     para.innerText=todo;
+        //     list.appendChild(para);
+        //     para.style.cursor='pointer'
+        //     para.addEventListener("click",()=>{
+        //         para.style.cursor='pointer'
+        //         para.style.textDecoration ='line-through'
+
+        //     })
+        // }
+
+
+    </script>
+    
+</body>
+</html>
